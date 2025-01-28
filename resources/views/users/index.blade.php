@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="card">
-    <div class="card-header">Manage Users</div>
     <div class="card-body">
+        <h5 class="card-title">Manage Users</h5>
         @can('create-user')
             <a href="{{ route('users.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Add New User</a>
         @endcan
@@ -71,4 +71,9 @@
     </div>
 </div>
     
+<script>
+    $(document).ready(function() {
+        $('.usersblade').removeClass('collapsed');
+    });
+</script>
 @endsection

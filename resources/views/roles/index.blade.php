@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header">Manage Roles</div>
     <div class="card-body">
+    <h5 class="card-title">Manage Roles</h5>
         @can('create-role')
             <a href="{{ route('roles.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Add New Role</a>
         @endcan
@@ -63,4 +63,10 @@
 
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('.rolesblade').removeClass('collapsed');
+    });
+</script>
 @endsection

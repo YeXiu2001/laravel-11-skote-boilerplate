@@ -28,11 +28,18 @@
   <li class="nav-heading">Developer</li>
 
   <li class="nav-item">
-    <a class="nav-link collapsed" href="users-profile.html">
-      <i class="bi bi-person"></i>
-      <span>Profile</span>
+    <a class="nav-link collapsed rolesblade" href="/roles">
+      <i class="bi bi-person-badge"></i>
+      <span>Roles</span>
     </a>
   </li><!-- End Profile Page Nav -->
+
+  <li class="nav-item">
+    <a class="nav-link collapsed usersblade" href="/users">
+      <i class="bi bi-people"></i>
+      <span>Users</span>
+    </a>
+  </li>
 
 
 </ul>
