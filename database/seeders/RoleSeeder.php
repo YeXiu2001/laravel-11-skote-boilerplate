@@ -15,26 +15,13 @@ class RoleSeeder extends Seeder
     {
         Role::create(['name' => 'Super Admin']);
         $admin = Role::create(['name' => 'Admin']);
-        $productManager = Role::create(['name' => 'Product Manager']);
-        $user = Role::create(['name' => 'User']);
+        // $productManager = Role::create(['name' => 'Product Manager']);
+        // $user = Role::create(['name' => 'User']);
 
         $admin->givePermissionTo([
             'create-user',
             'edit-user',
             'delete-user',
-            'create-product',
-            'edit-product',
-            'delete-product'
-        ]);
-
-        $productManager->givePermissionTo([
-            'create-product',
-            'edit-product',
-            'delete-product'
-        ]);
-
-        $user->givePermissionTo([
-            'view-product'
         ]);
     }
 }

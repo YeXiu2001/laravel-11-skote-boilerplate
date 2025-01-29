@@ -25,6 +25,7 @@
     </ul>
   </li><!-- End Components Nav -->
 
+  @hasanyrole('Super Admin|Admin')
   <li class="nav-heading">Developer</li>
 
   <li class="nav-item">
@@ -40,7 +41,7 @@
       <span>Users</span>
     </a>
   </li>
-
+  @endhasanyrole
 
 </ul>
 
