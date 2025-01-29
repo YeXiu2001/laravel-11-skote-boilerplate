@@ -14,4 +14,7 @@ Make sure that you have setup the environment properly. You will need minimum PH
 7. Run `npm install`
 8. Run `npm run build` to build assets
 9. Start local server by executing `php artisan serve`
-10. Visit here http://127.0.0.1:8000/login to test the application
+
+## Using as an API
+Laravel CORS is already preconfigured on config/cors.php
+Run `php artisan install:api` to add api.php on routes
