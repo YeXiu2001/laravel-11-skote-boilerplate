@@ -1,25 +1,23 @@
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>Laravel 11 Boiler Plate</title>
-  <!-- jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <!-- Favicons -->
-<link href="{{ url('assets/img/favicon.png') }}" rel="icon">
-<link href="{{ url('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+<head>
+        
+    <meta charset="utf-8" />
+    <title>MedSYS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{url('assets/images/logo.png')}}">
 
-<!-- Google Fonts -->
-<link href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="{{url('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{url('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{url('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- App js -->
+    <!-- <script src="{{url('assets/js/plugin.js')}}"></script> -->
 
-<!-- Vendor CSS Files -->
-<link href="{{ url('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ url('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-<link href="{{ url('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-<link href="{{ url('assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
-<link href="{{ url('assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
-<link href="{{ url('assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-<link href="{{ url('assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="{{url('assets/libs/owl.carousel/assets/owl.carousel.min.css')}}">
 
-<!-- Template Main CSS File -->
-<link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libs/owl.carousel/assets/owl.theme.default.min.css">
+
+</head>

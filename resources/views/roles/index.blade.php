@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="card">
+    <div class="card-header">Manage Roles</div>
     <div class="card-body">
-    <h5 class="card-title">Manage Roles</h5>
         @can('create-role')
             <a href="{{ route('roles.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Add New Role</a>
         @endcan
@@ -11,8 +11,7 @@
             <thead>
                 <tr>
                 <th scope="col">S#</th>
-                <th scope="col" style="max-width:100px;">Role Name</th>
-                <th scope="col">Permissions</th>
+                <th scope="col">Name</th>
                 <th scope="col" style="width: 250px;">Action</th>
                 </tr>
             </thead>
@@ -22,17 +21,11 @@
                     <th scope="row">{{ $loop->iteration }}</th>
                     <td>{{ $role->name }}</td>
                     <td>
-                        <ul>
-                            @forelse ($role->permissions as $permission)
-                                <li>{{ $permission->name }}</li>
-                            @empty
-                            @endforelse
-                        </ul>
-                    </td>
-                    <td>
                         <form action="{{ route('roles.destroy', $role->id) }}" method="post">
                             @csrf
                             @method('DELETE')
+
+                            <a href="{{ route('roles.show', $role->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Show</a>
 
                             @if ($role->name!='Super Admin')
                                 @can('edit-role')
@@ -63,10 +56,4 @@
 
     </div>
 </div>
-
-<script>
-    $(document).ready(function() {
-        $('.rolesblade').removeClass('collapsed');
-    });
-</script>
 @endsection

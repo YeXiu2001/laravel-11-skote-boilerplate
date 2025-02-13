@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="card">
+    <div class="card-header">Manage Users</div>
     <div class="card-body">
-        <h5 class="card-title">Manage Users</h5>
         @can('create-user')
             <a href="{{ route('users.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Add New User</a>
         @endcan
@@ -25,17 +25,17 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                        <ul>
-                            @forelse ($user->getRoleNames() as $role)
-                                <li>{{ $role }}</li>
-                            @empty
-                            @endforelse
-                        </ul>
+                        @forelse ($user->getRoleNames() as $role)
+                            <span class="badge bg-primary">{{ $role }}</span>
+                        @empty
+                        @endforelse
                     </td>
                     <td>
                         <form action="{{ route('users.destroy', $user->id) }}" method="post">
                             @csrf
                             @method('DELETE')
+
+                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Show</a>
 
                             @if (in_array('Super Admin', $user->getRoleNames()->toArray() ?? []) )
                                 @if (Auth::user()->hasRole('Super Admin'))
@@ -71,9 +71,4 @@
     </div>
 </div>
     
-<script>
-    $(document).ready(function() {
-        $('.usersblade').removeClass('collapsed');
-    });
-</script>
 @endsection

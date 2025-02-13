@@ -26,7 +26,7 @@ class RoleController extends Controller
     public function index(): View
     {
         return view('roles.index', [
-            'roles' => Role::with('permissions')->orderBy('id', 'DESC')->paginate(3)
+            'roles' => Role::orderBy('id','DESC')->paginate(3)
         ]);
     }
 
@@ -58,9 +58,16 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(): RedirectResponse
+    public function show(Role $role): View
     {
-        return redirect()->route('roles.index');
+        $rolePermissions = Permission::join("role_has_permissions","permission_id","=","id")
+            ->where("role_id",$role->id)
+            ->select('name')
+            ->get();
+        return view('roles.show', [
+            'role' => $role,
+            'rolePermissions' => $rolePermissions
+        ]);
     }
 
     /**

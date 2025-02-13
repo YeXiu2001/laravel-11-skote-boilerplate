@@ -1,9 +1,5 @@
-## Reference
-https://www.allphptricks.com/
-
-
 ## Installation 
-Make sure that you have setup the environment properly. You will need minimum PHP 8.2, MySQL/MariaDB, composer and Node.js.
+Make sure that you have setup the environment properly. You will need minimum PHP 8.2, MySQL/MariaDB, composer.
 
 1. Download the project (or clone using GIT)
 2. Copy `.env.example` into `.env` and configure your database credentials

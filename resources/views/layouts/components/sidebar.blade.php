@@ -1,48 +1,55 @@
-<!-- ======= Sidebar ======= -->
-<aside id="sidebar" class="sidebar">
+<div class="vertical-menu" >
 
-<ul class="sidebar-nav" id="sidebar-nav">
+    <div data-simplebar class="h-100">
 
-  <li class="nav-item ">
-    <a class="nav-link collapsed homeblade" href="/home">
-      <i class="bi bi-grid"></i>
-      <span>Dashboard</span>
-    </a>
-  </li><!-- End Dashboard Nav -->
 
-  <li class="nav-item">
-    <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-      <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
-    </a>
-    <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-      <li>
-        <a href="components-alerts.html">
-          <i class="bi bi-circle"></i><span>Alerts</span>
-        </a>
-      </li>
-     
-      </li>
-    </ul>
-  </li><!-- End Components Nav -->
+        <div id="sidebar-menu">
+            
+            <ul class="metismenu list-unstyled" id="side-menu">
+                <li class="menu-title" key="t-menu">Menu</li>
 
-  @hasanyrole('Super Admin|Admin')
-  <li class="nav-heading">Developer</li>
+                <li>
+                    <a href="/home" class="waves-effect">
+                        <i class="bx bx-chat"></i>
+                        <span key="t-chat">Dashboard</span>
+                    </a>
+                </li>
 
-  <li class="nav-item">
-    <a class="nav-link collapsed rolesblade" href="/roles">
-      <i class="bi bi-person-badge"></i>
-      <span>Roles</span>
-    </a>
-  </li><!-- End Profile Page Nav -->
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="bx bx-chat"></i>
+                        <span key="t-chat">Pharmacy Info</span> 
+                        <!-- View/Edit/Delete Pharmacy Information and Ads -->
+                    </a>
+                </li>
+                
+                @can('Super Admin')
+                <li class="menu-title" key="t-menu">Developer</li>
 
-  <li class="nav-item">
-    <a class="nav-link collapsed usersblade" href="/users">
-      <i class="bi bi-people"></i>
-      <span>Users</span>
-    </a>
-  </li>
-  @endhasanyrole
+                <li>
+                    <a href="#" class="waves-effect">
+                        <i class="bx bx-user"></i>
+                        <span key="t-chat">Pharmacy</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/users" class="waves-effect">
+                        <i class="bx bx-user"></i>
+                        <span key="t-chat">User</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/roles" class="waves-effect">
+                        <i class="bx bx-chat"></i>
+                        <span key="t-chat">Role</span>
+                    </a>
+                </li>
+                @endcan
 
-</ul>
+            </ul>
 
-</aside><!-- End Sidebar--><!-- End Sidebar-->
+        </div>
+
+    </div>
+    
+</div>

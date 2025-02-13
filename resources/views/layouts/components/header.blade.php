@@ -1,64 +1,83 @@
- <!-- ======= Header ======= -->
- <header id="header" class="header fixed-top d-flex align-items-center">
+<header id="page-topbar">
 
-<div class="d-flex align-items-center justify-content-between">
-  <a href="index.html" class="logo d-flex align-items-center">
-    <img src="assets/img/logo.png" alt="">
-    <span class="d-none d-lg-block">NiceAdmin</span>
-  </a>
-  <i class="bi bi-list toggle-sidebar-btn"></i>
-</div><!-- End Logo -->
+    <div class="navbar-header">
+        <div class="d-flex">
 
+            <div class="navbar-brand-box">
+                <!-- <a href="/home" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="{{url('assets/images/logo.png')}}" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="{{url('assets/images/medsys_logo_nobg.png')}}" alt="" height="17">
+                    </span>
+                </a> -->
 
-<nav class="header-nav ms-auto">
-  <ul class="d-flex align-items-center">
+                <a href="/home" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="{{url('assets/images/logo_only.png')}}" alt="" height="42">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="{{url('assets/images/medsys_logo_nobg.png')}}" alt="" height="65">
+                    </span>
+                </a>
+            </div>
 
+            <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                <i class="fa fa-fw fa-bars"></i>
+            </button>
 
-    <li class="nav-item dropdown pe-3">
+        </div>
 
-      <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-        <span class="d-none d-md-block dropdown-toggle ps-2">{{Auth::user()->name}}</span>
-      </a><!-- End Profile Iamge Icon -->
+        <div class="d-flex">
 
-      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-        <!-- <li class="dropdown-header">
-          <h6>Kevin Anderson</h6>
-          <span>Web Designer</span>
-        </li>
-        <li>
-          <hr class="dropdown-divider">
-        </li> -->
+            <div class="dropdown d-inline-block d-lg-none ms-2">
+                <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="mdi mdi-magnify"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                    aria-labelledby="page-header-search-dropdown">
 
-        <li>
-          <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-            <i class="bi bi-person"></i>
-            <span>My Profile</span>
-          </a>
-        </li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
+                    <form class="p-3">
+                        <div class="form-group m-0">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-        <li>
-          <hr class="dropdown-divider">
-        </li>
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item waves-effect"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle header-profile-user" src="{{url('assets/images/users/avatar-1.jpg')}}"
+                        alt="Header Avatar">
+                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ Auth::user()->name }}</span>
+                    <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                </button>
+                
+                <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+                    <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">Profile</span></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> 
+                        <span key="t-logout">Logout</span>
+                    </a>
 
-        <li></li>
-          <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}" 
-             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <i class="bi bi-box-arrow-right"></i>
-            <span>Sign Out</span>
-          </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-          </form>
-        </li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </div>
 
-      </ul><!-- End Profile Dropdown Items -->
-    </li><!-- End Profile Nav -->
+        </div>
 
-  </ul>
-</nav><!-- End Icons Navigation -->
+    </div>
 
-</header><!-- End Header -->
+</header>
